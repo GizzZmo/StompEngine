@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="780" viewBox="0 0 390 780">
+  <rect width="390" height="780" fill="#000"/>
+  <text x="195" y="54" text-anchor="middle" fill="#ff8c00" font-family="ui-monospace,monospace" font-size="20" font-weight="700">STOMP ENGINE</text>
+  <text x="195" y="76" text-anchor="middle" fill="#888" font-family="ui-monospace,monospace" font-size="10">USB-C  •  MEASUREMENT I/O</text>
+  <rect x="16" y="96" width="358" height="78" rx="8" fill="#121212" stroke="#ff8c0033"/>
+  <text x="28" y="118" fill="#ff8c00" font-family="ui-monospace,monospace" font-size="10">IN</text>
+  <text x="58" y="118" fill="#ddd" font-family="ui-monospace,monospace" font-size="10">USB Audio Device</text>
+  <text x="28" y="138" fill="#ff8c00" font-family="ui-monospace,monospace" font-size="10">OUT</text>
+  <text x="58" y="138" fill="#ddd" font-family="ui-monospace,monospace" font-size="10">USB Audio Device</text>
+  <text x="28" y="158" fill="#ff8c00" font-family="ui-monospace,monospace" font-size="10">I/O</text>
+  <text x="58" y="158" fill="#ddd" font-family="ui-monospace,monospace" font-size="10">48000 Hz • 64 fr • 1.33 ms</text>
+  <g fill="#888" font-family="ui-monospace,monospace" font-size="11">
+    <text x="20" y="200">DRIVE</text><text x="350" y="200" text-anchor="end" fill="#ff8c00">4.00</text>
+    <rect x="20" y="208" width="350" height="6" rx="3" fill="#333"/>
+    <rect x="20" y="208" width="80" height="6" rx="3" fill="#ff8c00"/>
+    <text x="20" y="240">DELAY MS</text><text x="350" y="240" text-anchor="end" fill="#ff8c00">300</text>
+    <rect x="20" y="248" width="350" height="6" rx="3" fill="#333"/>
+    <rect x="20" y="248" width="112" height="6" rx="3" fill="#ff8c00"/>
+    <text x="20" y="280">FDBK</text><text x="350" y="280" text-anchor="end" fill="#ff8c00">0.40</text>
+    <rect x="20" y="288" width="350" height="6" rx="3" fill="#333"/>
+    <rect x="20" y="288" width="150" height="6" rx="3" fill="#ff8c00"/>
+  </g>
+  <rect x="16" y="680" width="200" height="48" rx="8" fill="#1c1c1c"/>
+  <text x="116" y="709" text-anchor="middle" fill="#32dc5a" font-family="ui-monospace,monospace" font-size="13">EFFECT</text>
+  <circle cx="344" cy="704" r="28" fill="#5a5a5a"/>
+  <text x="344" y="708" text-anchor="middle" fill="#fff" font-family="ui-monospace,monospace" font-size="11">PWR</text>
+</svg>
