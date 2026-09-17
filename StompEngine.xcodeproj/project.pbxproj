@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* StompEngineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000001 /* StompEngineApp.swift */; };
+		A10000000000000000000002 /* GuitarPedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000002 /* GuitarPedalView.swift */; };
+		A10000000000000000000003 /* AtomicSlots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* AtomicSlots.swift */; };
+		A10000000000000000000004 /* SPSCFloatRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* SPSCFloatRing.swift */; };
+		A10000000000000000000005 /* GuitarDSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* GuitarDSP.swift */; };
+		A10000000000000000000006 /* LowLatencyGuitarEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* LowLatencyGuitarEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B00000000000000000000001 /* StompEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StompEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000000000000000001 /* StompEngineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompEngineApp.swift; sourceTree = "<group>"; };
+		B10000000000000000000002 /* GuitarPedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarPedalView.swift; sourceTree = "<group>"; };
+		B10000000000000000000003 /* AtomicSlots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicSlots.swift; sourceTree = "<group>"; };
+		B10000000000000000000004 /* SPSCFloatRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSCFloatRing.swift; sourceTree = "<group>"; };
+		B10000000000000000000005 /* GuitarDSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarDSP.swift; sourceTree = "<group>"; };
+		B10000000000000000000006 /* LowLatencyGuitarEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowLatencyGuitarEngine.swift; sourceTree = "<group>"; };
+		B10000000000000000000007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C10000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D10000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				D10000000000000000000002 /* StompEngine */,
+				D10000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D10000000000000000000002 /* StompEngine */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000001 /* StompEngineApp.swift */,
+				B10000000000000000000002 /* GuitarPedalView.swift */,
+				D10000000000000000000003 /* Engine */,
+				B10000000000000000000007 /* Info.plist */,
+			);
+			path = StompEngine;
+			sourceTree = "<group>";
+		};
+		D10000000000000000000003 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000003 /* AtomicSlots.swift */,
+				B10000000000000000000004 /* SPSCFloatRing.swift */,
+				B10000000000000000000005 /* GuitarDSP.swift */,
+				B10000000000000000000006 /* LowLatencyGuitarEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		D10000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00000000000000000000001 /* StompEngine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E10000000000000000000001 /* StompEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F10000000000000000000003 /* Build configuration list for PBXNativeTarget "StompEngine" */;
+			buildPhases = (
+				E20000000000000000000001 /* Sources */,
+				C10000000000000000000001 /* Frameworks */,
+				E30000000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StompEngine;
+			productName = StompEngine;
+			productReference = B00000000000000000000001 /* StompEngine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E10000000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = F10000000000000000000001 /* Build configuration list for PBXProject "StompEngine" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D10000000000000000000001;
+			productRefGroup = D10000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E10000000000000000000001 /* StompEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E30000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E20000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* StompEngineApp.swift in Sources */,
+				A10000000000000000000002 /* GuitarPedalView.swift in Sources */,
+				A10000000000000000000003 /* AtomicSlots.swift in Sources */,
+				A10000000000000000000004 /* SPSCFloatRing.swift in Sources */,
+				A10000000000000000000005 /* GuitarDSP.swift in Sources */,
+				A10000000000000000000006 /* LowLatencyGuitarEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F20000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F20000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F20000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = StompEngine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gizzzmo.StompEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F20000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = StompEngine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gizzzmo.StompEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F10000000000000000000001 /* Build configuration list for PBXProject "StompEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F20000000000000000000001 /* Debug */,
+				F20000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F10000000000000000000003 /* Build configuration list for PBXNativeTarget "StompEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F20000000000000000000003 /* Debug */,
+				F20000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E00000000000000000000001 /* Project object */;
+}
