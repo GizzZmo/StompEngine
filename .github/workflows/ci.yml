@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  assets:
+    name: Generate assets & screenshots
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install generator deps
+        run: pip install -r Scripts/requirements.txt
+      - name: Generate icons, screenshots, artifact bundle
+        run: python Scripts/generate_assets.py
+      - name: Upload generated assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: stompengine-assets
+          path: |
+            StompEngine/Assets.xcassets/**
+            docs/screenshots/**
+            docs/preview/**
+            build/generated-assets/**
+          if-no-files-found: error
+      - name: Upload screenshot gallery
+        uses: actions/upload-artifact@v4
+        with:
+          name: stompengine-screenshots
+          path: docs/screenshots/*.png
+
+  validate:
+    name: Validate project files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required paths
+        run: |
+          set -euo pipefail
+          test -f StompEngine.xcodeproj/project.pbxproj
+          test -f StompEngine.xcodeproj/xcshareddata/xcschemes/StompEngine.xcscheme
+          test -f StompEngine/StompEngineApp.swift
+          test -f StompEngine/Engine/LowLatencyGuitarEngine.swift
+          test -f StompEngine/Info.plist
+          test -f Scripts/generate_assets.py
+      - name: Swift sanity (no compile)
+        run: |
+          set -euo pipefail
+          ! grep -R "connect(dspNode, to: outputNode" -n StompEngine
+          ! grep -R "delayBuffer: \[Float\]" -n StompEngine
+
+  ios-simulator:
+    name: Build iOS Simulator
+    runs-on: macos-14
+    needs: [validate]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate Assets.xcassets before compile
+        run: |
+          pip install -r Scripts/requirements.txt
+          python Scripts/generate_assets.py
+      - name: Show Xcode
+        run: xcodebuild -version && xcodebuild -project StompEngine.xcodeproj -list
+      - name: Build for generic iOS Simulator
+        run: |
+          set -euo pipefail
+          mkdir -p build/logs build/derived
+          xcodebuild \
+            -project StompEngine.xcodeproj \
+            -scheme StompEngine \
+            -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build/derived \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            build | tee build/logs/xcodebuild.log
+      - name: Collect .app
+        if: always()
+        run: |
+          mkdir -p build/artifacts
+          find build/derived -name 'StompEngine.app' -type d | head -n 1 | while read -r app; do
+            ditto "$app" build/artifacts/StompEngine.app
+          done
+          ls -la build/artifacts || true
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stompengine-ios-simulator
+          path: |
+            build/artifacts/**
+            build/logs/xcodebuild.log
+          if-no-files-found: warn

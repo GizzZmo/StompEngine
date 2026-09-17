@@ -1,0 +1,49 @@
+name: Assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Scripts/**"
+      - "docs/**"
+      - ".github/workflows/assets.yml"
+      - "StompEngine/GuitarPedalView.swift"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    name: Regenerate icons & screenshots
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r Scripts/requirements.txt
+      - name: Generate
+        run: python Scripts/generate_assets.py
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: stompengine-generated-assets
+          path: |
+            StompEngine/Assets.xcassets/**
+            docs/screenshots/**
+            docs/preview/**
+            build/generated-assets/**
+      - name: Commit generated catalog if dirty
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add StompEngine/Assets.xcassets docs/screenshots docs/preview
+          if git diff --cached --quiet; then
+            echo "No asset changes"
+          else
+            git commit -m "chore(assets): regenerate icons and screenshots"
+            git push
+          fi
